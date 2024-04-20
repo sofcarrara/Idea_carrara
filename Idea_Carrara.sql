@@ -28,8 +28,8 @@ Foto LONGBLOB NOT NULL,
 PRIMARY KEY (Id_Piloto),
 FOREIGN KEY (Escud) REFERENCES Escuderias (Id_esc));
 
-DROP TABLE IF EXISTS Historial_Equitpos;
-CREATE TABLE IF NOT EXISTS Historial_Equitpos (
+DROP TABLE IF EXISTS Historial_Equipos;
+CREATE TABLE IF NOT EXISTS Historial_Equipos (
 Id INT AUTO_INCREMENT NOT NULL,
 Piloto INT NOT NULL,
 Escuderia INT NOT NULL,
@@ -76,10 +76,24 @@ Carrera INT NOT NULL,
 Primer_puesto INT NOT NULL,
 Seg_puesto INT NOT NULL,
 Terc_puesto INT NOT NULL,
+Cuarto_puesto INT NOT NULL,
+Quinto_puesto INT NOT NULL,
+Sexto_puesto  INT NOT NULL,
+Sept_puesto INT NOT NULL,
+Octav_puesto INT NOT NULL,
+Noven_puesto INT NOT NULL,
+Decim_puesto INT NOT NULL,
 Vuelta_rapida INT NOT NULL,
 PRIMARY KEY (id_result),
 FOREIGN KEY (Carrera) REFERENCES Carreras (Id_carrera),
 FOREIGN KEY (Primer_puesto) REFERENCES Pilotos (Id_piloto),
 FOREIGN KEY (Seg_puesto) REFERENCES Pilotos (Id_piloto),
 FOREIGN KEY (Terc_puesto) REFERENCES Pilotos (Id_piloto),
-FOREIGN KEY (Vuelta_rapida) REFERENCES Pilotos (Id_piloto));
+FOREIGN KEY (Cuarto_puesto) REFERENCES Pilotos (Id_piloto),
+FOREIGN KEY (Quinto_puesto) REFERENCES Pilotos (Id_piloto),
+FOREIGN KEY (Sexto_puesto) REFERENCES Pilotos (Id_piloto),
+FOREIGN KEY (Sept_puesto) REFERENCES Pilotos (Id_piloto),
+FOREIGN KEY (Octav_puesto) REFERENCES Pilotos (Id_piloto),
+FOREIGN KEY (Noven_puesto) REFERENCES Pilotos (Id_piloto),
+FOREIGN KEY (Decim_puesto) REFERENCES Pilotos (Id_piloto),
+FOREIGN KEY (Vuelta_rapida)  REFERENCES Pilotos (Id_piloto));
